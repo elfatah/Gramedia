@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
@@ -14,13 +13,13 @@ import com.elfatah.testgramedia.presentation.presenters.ContentPresenter;
 import com.elfatah.testgramedia.presentation.presenters.ContentPresenterImpl;
 import com.elfatah.testgramedia.presentation.ui.fragments.ContentFragment;
 import com.elfatah.testgramedia.presentation.ui.view.FlipPageViewTransformer;
-import com.elfatah.testgramedia.storage.repository.ContentRepo;
+import com.elfatah.testgramedia.domain.repository.ContentRepo;
+import com.elfatah.testgramedia.storage.repository.ContentRepoImpl;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import app.num.numandroidpagecurleffect.PageCurlView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import rx.Subscriber;
@@ -74,7 +73,7 @@ public class MainActivity extends RxAppCompatActivity {
     }
 
     private void setUpPresenter() {
-        contentPresenter = new ContentPresenterImpl(new ContentRepo.ContentRepoImpl());
+        contentPresenter = new ContentPresenterImpl(new ContentRepoImpl());
     }
 
     private void setUpViewPager() {

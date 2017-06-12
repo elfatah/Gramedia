@@ -2,7 +2,7 @@ package com.elfatah.testgramedia.presentation.presenters;
 
 import com.elfatah.testgramedia.domain.interactor.GetAllContentInteractorImpl;
 import com.elfatah.testgramedia.domain.model.Content;
-import com.elfatah.testgramedia.storage.repository.ContentRepo;
+import com.elfatah.testgramedia.domain.repository.ContentRepo;
 
 import java.util.List;
 

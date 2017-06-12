@@ -1,6 +1,6 @@
 package com.elfatah.testgramedia.domain.interactor;
 
-import com.elfatah.testgramedia.storage.repository.ContentRepo;
+import com.elfatah.testgramedia.domain.repository.ContentRepo;
 
 import rx.Observable;
 
