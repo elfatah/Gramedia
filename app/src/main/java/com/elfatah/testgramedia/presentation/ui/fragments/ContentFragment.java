@@ -1,9 +1,11 @@
 package com.elfatah.testgramedia.presentation.ui.fragments;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +77,11 @@ public class ContentFragment extends Fragment {
     }
 
     private void iniView() {
-        textView.setText(mParam1.getContent());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            textView.setText(Html.fromHtml(mParam1.getContent(), Html.FROM_HTML_MODE_COMPACT).toString());
+        } else {
+            textView.setText(Html.fromHtml(mParam1.getContent()));
+        }
     }
 
 }
